@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuardianPill - Real-time Dashboard</title>
+    <!-- Fonts & CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Library Grafik -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Utama -->
+        <header class="main-header">
+            <div>
+                <h1>GuardianPill Dashboard</h1>
+                <p>Monitoring Kepatuhan Minum Obat Pasien Secara Real-time</p>
+            </div>
+            <div class="status-indicator">
+                <span class="dot"></span>
+                <span id="connection-status">Menghubungkan...</span>
+            </div>
+        </header>
+
+        <!-- Ringkasan Global -->
+        <section class="summary-section">
+            <div class="summary-card">
+                <h3>Total Pasien</h3>
+                <p id="total-patients">0</p>
+            </div>
+            <div class="summary-card">
+                <h3>Kepatuhan Global</h3>
+                <p id="global-compliance">- %</p>
+            </div>
+            <div class="summary-card">
+                <h3>Total Terlewat Hari Ini</h3>
+                <p id="total-missed">0</p>
+            </div>
+        </section>
+
+        <!-- Grafik Global -->
+        <section class="global-chart-section">
+            <h3>Perbandingan Kepatuhan Antar Pasien</h3>
+            <div class="chart-container">
+                <canvas id="globalComplianceChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Grid untuk Kartu Pasien -->
+        <h2>Detail Pasien</h2>
+        <main id="patient-grid" class="patient-grid">
+            <!-- Kartu pasien akan dibuat secara dinamis oleh JavaScript -->
+        </main>
+    </div>
+
+    <!-- JavaScript untuk logika dashboard -->
+    <script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+</body>
+</html>

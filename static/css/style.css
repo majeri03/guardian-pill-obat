@@ -1,0 +1,210 @@
+/* Definisi Variabel Warna & Font */
+:root {
+    --bg-dark-navy: #0A0E2A;
+    --bg-card: #161A3A;
+    --border-color: #2c304a;
+    --primary-magenta: #E6007A;
+    --accent-blue: #4A90E2;
+    --accent-green: #34D399;
+    --text-primary: #EAEAEA;
+    --text-secondary: #a9a9b3;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Reset & Fondasi Dasar */
+body {
+    background-color: var(--bg-dark-navy);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Header Utama */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.5rem;
+}
+
+.main-header h1 {
+    font-size: 2.25rem;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.main-header p {
+    font-size: 1.1rem;
+    margin: 0.25rem 0 0;
+    color: var(--text-secondary);
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-card);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.status-indicator .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 0.75rem;
+    background-color: #f59e0b; /* Kuning (Menghubungkan) */
+    transition: background-color 0.3s ease;
+}
+
+.status-indicator .dot.connected {
+    background-color: var(--accent-green); /* Hijau */
+}
+
+.status-indicator .dot.error {
+    background-color: var(--primary-magenta); /* Merah */
+}
+
+/* Kartu Ringkasan */
+.summary-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.summary-card {
+    background-color: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.summary-card h3 {
+    margin: 0 0 0.5rem;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.summary-card p {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* Grafik Global */
+.global-chart-section {
+    background-color: var(--bg-card);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 2.5rem;
+}
+
+.global-chart-section h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.chart-container {
+    position: relative;
+    height: 350px;
+}
+
+/* Grid Pasien */
+h2 {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.75rem;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.patient-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+}
+
+.patient-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.patient-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.patient-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.patient-header h4 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.patient-header .compliance-score {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.compliance-score.good { color: var(--accent-green); }
+.compliance-score.medium { color: #f59e0b; }
+.compliance-score.bad { color: var(--primary-magenta); }
+
+
+.schedule-status-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.schedule-status {
+    flex: 1;
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: 8px;
+    background-color: var(--bg-dark-navy);
+}
+
+.schedule-status .label {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.25rem;
+}
+
+.schedule-status .status {
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+/* Warna status dinamis */
+.status.diambil { color: var(--accent-green); }
+.status.terlewat { color: var(--primary-magenta); }
+.status.menunggu { color: var(--text-secondary); }
+
+.patient-chart-container {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    margin: 0 auto;
+}
